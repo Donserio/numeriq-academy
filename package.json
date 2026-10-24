@@ -1,0 +1,11 @@
+{
+  "name": "numeriq-academy",
+  "version": "1.0.0",
+  "description": "NumerIQ Academy - Learning, Personalised. Online tutoring for Mathematics, Arabic, and Qur'an.",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}

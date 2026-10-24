@@ -6,6 +6,22 @@
   <title>NumerIQ Academy | Learning, Personalised.</title>
   <meta name="description" content="Personalised online tutoring in Mathematics (Year 5–12 / GCSE), Arabic Language, and Qur'an Reading for families across the UK, USA, and Canada.">
   <link rel="canonical" href="https://academy.numeriq.space">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#1e3a8a">
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://academy.numeriq.space">
+  <meta property="og:site_name" content="NumerIQ Academy">
+  <meta property="og:title" content="NumerIQ Academy | Learning, Personalised.">
+  <meta property="og:description" content="Personalised online tutoring in Mathematics (Year 5–12 / GCSE), Arabic Language, and Qur'an Reading for families across the UK, USA, and Canada.">
+  <meta property="og:image" content="https://academy.numeriq.space/favicon.svg">
+
+  <!-- Twitter / X Meta -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NumerIQ Academy | Learning, Personalised.">
+  <meta name="twitter:description" content="Personalised online tutoring in Mathematics (Year 5–12 / GCSE), Arabic Language, and Qur'an Reading.">
+  <meta name="twitter:image" content="https://academy.numeriq.space/favicon.svg">
   
   <!-- Inter Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -420,7 +436,7 @@
                 </div>
                 <div>
                   <div class="whatsapp-text-small">Prefer a quick chat?</div>
-                  <a href="https://wa.me/?text=Hello%20NumerIQ%20Academy,%20I%20would%20like%20to%20enquire%20about%20tutoring%20for%20my%20child." target="_blank" rel="noopener noreferrer" class="whatsapp-action-link">Message us on WhatsApp</a>
+                  <a href="https://wa.me/2348160298696?text=Hello%20NumerIQ%20Academy%2C%20I%20would%20like%20to%20enquire%20about%20tutoring%20for%20my%20child." target="_blank" rel="noopener noreferrer" class="whatsapp-action-link">Message us on WhatsApp (+234 816 029 8696)</a>
                 </div>
               </div>
             </div>
@@ -428,7 +444,13 @@
 
           <!-- Form Area -->
           <div class="enquiry-form-container">
+            <!-- Form Error Banner -->
+            <div class="form-error-banner" id="formErrorBanner"></div>
+
             <form id="parentEnquiryForm">
+              <!-- Honeypot field for spam prevention -->
+              <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
               <div class="form-group-row">
                 <div class="form-group">
                   <label class="form-label" for="parentName">Parent / Guardian Name *</label>
@@ -500,12 +522,12 @@
                 <textarea id="learningGoals" class="form-control" placeholder="e.g. Struggling with fractions and algebra; preparing for GCSEs; starting Arabic from scratch..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-large" style="width: 100%;">
                 Submit Enquiry & Schedule Call
               </button>
 
               <p class="form-notice">
-                We respect your family's privacy. We will never share your details or send marketing spam. You will only receive communication regarding your enquiry.
+                We respect your family's privacy. We will never share your details or send marketing spam. Review our <a href="#privacy" id="openPrivacyPolicyLink" style="text-decoration: underline; color: var(--color-primary-light);">Child Safeguarding & Privacy Standards</a>.
               </p>
             </form>
 
@@ -516,9 +538,23 @@
               </div>
               <h3>Thank You for Reaching Out!</h3>
               <p id="successSummary">
-                We have received your enquiry for NumerIQ Academy. Our team will review your learner's needs and contact you within 24 hours via email and WhatsApp.
+                We have received your enquiry for NumerIQ Academy. Our team will review your learner's needs and contact you within 24 hours.
               </p>
-              <button class="btn btn-outline" id="resetFormBtn">Submit Another Enquiry</button>
+
+              <!-- Instant WhatsApp continuation action -->
+              <div style="margin: 1.5rem 0;">
+                <a href="#" id="successWhatsAppBtn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-success">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  <span>Chat With Us on WhatsApp Now</span>
+                </a>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+                  Skip the email wait—connect with us directly on WhatsApp with your enquiry details.
+                </div>
+              </div>
+
+              <div style="margin-top: 1.25rem;">
+                <button class="btn btn-outline" id="resetFormBtn">Submit Another Enquiry</button>
+              </div>
             </div>
           </div>
         </div>
@@ -642,10 +678,11 @@
         <div class="footer-col">
           <h4>Direct Reach</h4>
           <ul>
-            <li><a href="https://wa.me/?text=Hello%20NumerIQ%20Academy" target="_blank" rel="noopener noreferrer">WhatsApp Support</a></li>
+            <li><a href="https://wa.me/2348160298696?text=Hello%20NumerIQ%20Academy%2C%20I%20have%20an%20enquiry%20regarding%20tutoring." target="_blank" rel="noopener noreferrer">WhatsApp Support (+234 816 029 8696)</a></li>
             <li><a href="#enquire">Parent Enquiry Form</a></li>
+            <li><a href="mailto:numeriq.academy@gmail.com">numeriq.academy@gmail.com</a></li>
             <li style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">
-              Operating across UK, US, Canadian & West African time zones.
+              Serving families in UK, USA, Canada & West Africa.
             </li>
           </ul>
         </div>
@@ -659,11 +696,62 @@
           academy.numeriq.space
         </div>
         <div>
-          Child Safeguarding &amp; Privacy First
+          <a href="#safeguarding" id="footerSafeguardingLink" style="color: #94a3b8; text-decoration: underline;">
+            Child Safeguarding &amp; Privacy Policy
+          </a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       Child Safeguarding & Privacy Modal
+       ========================================================================== -->
+  <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle">Child Safeguarding & Privacy Standards</h3>
+        <button class="modal-close-btn" id="closePrivacyModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>NumerIQ Academy</strong> is committed to providing a safe, respectful, and dignified learning environment for all students and their families.</p>
+        
+        <h4>1. Online Lesson Environment & Conduct</h4>
+        <ul>
+          <li>All online sessions are conducted via secure, password-protected video links.</li>
+          <li>Lessons focus strictly on educational instruction, guided practice, and feedback.</li>
+          <li>Parents/guardians are always welcome and encouraged to observe or be present during lessons.</li>
+          <li>Tutors maintain professional, supportive boundaries at all times.</li>
+        </ul>
+
+        <h4>2. Data Privacy & Learner Information</h4>
+        <ul>
+          <li>We only collect details strictly necessary to provide tutoring: parent contact details, learner’s school year/stage, and academic goals.</li>
+          <li>We never sell, rent, or distribute personal information to third parties.</li>
+          <li>We do not publicly post student work, names, photographs, or results without explicit, written parental consent.</li>
+        </ul>
+
+        <h4>3. Cross-Border Practice & Communication</h4>
+        <ul>
+          <li>All written communication regarding scheduling, invoices, and progress reports is conducted through verified parental channels (Email and WhatsApp).</li>
+          <li>Tutors operate in full alignment with international child protection principles across the UK, USA, Canada, and Nigeria.</li>
+        </ul>
+
+        <h4>4. Contact for Safeguarding Concerns</h4>
+        <p>If you have any questions or safeguarding inquiries, please reach out directly to the Academy leadership at <a href="mailto:numeriq.academy@gmail.com" style="color: var(--color-primary-light);">numeriq.academy@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Floating WhatsApp Contact Widget
+       ========================================================================== -->
+  <a href="https://wa.me/2348160298696?text=Hello%20NumerIQ%20Academy%2C%20I%20have%20a%20question%20about%20your%20tutoring%20programmes." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with NumerIQ Academy on WhatsApp">
+    <span class="floating-whatsapp-tooltip">Chat with us on WhatsApp</span>
+    <div class="floating-whatsapp-btn">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </div>
+  </a>
 
   <!-- JavaScript Interaction -->
   <script src="script.js"></script>
